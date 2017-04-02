@@ -11,7 +11,7 @@ var cssOutput = config.paths.stylesheets.css;
 
 var sassOptions = {
     errLogToConsole: true,
-    outputStyle: 'compressed' //expanded
+    outputStyle: 'expanded' //compressed
 };
 
 gulp.task('pub-css', () => {
