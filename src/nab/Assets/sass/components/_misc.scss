@@ -1,0 +1,23 @@
+﻿.vendor-prefix-test {
+  display: flex;
+}
+
+%message {
+  border: 5px solid;
+  padding: 10px;
+}
+
+.success {
+  @extend %message;
+  padding: 25px;
+}
+
+.error {
+  @extend %message;
+  padding: 50px;
+}
+
+.warning {
+  @extend %message;
+  padding: 75px;
+}

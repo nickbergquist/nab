@@ -1,0 +1,17 @@
+﻿{
+  "publish": "full",
+  "paths": {
+    "templates": {
+      "src": "./src/**/*.html",
+      "dest": "./build"
+    },
+    "stylesheets": {
+      "scss": "./Assets/sass/**/*.scss",
+      "css": "./wwwroot/css"
+    },
+    "javascript": {
+      "src": "./src/script/**/*.js",
+      "dest": "./build/script"
+    }
+  }
+}
