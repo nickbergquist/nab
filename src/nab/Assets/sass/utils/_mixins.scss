@@ -1,1 +1,31 @@
 ﻿
+//////////////////////
+//  typographical   //
+//////////////////////
+
+@mixin font-process($font-size, $bottom-margin-adjust: null) {
+  $font-size-rem: strip-units($font-size) / basefont-to-pixel($base-font-size);
+  font-size: #{$font-size-rem}#{'rem'};
+
+  @if $bottom-margin-adjust == 0 {
+    $margin: null;
+  } @else if $bottom-margin-adjust == 2 {
+    $margin: ($base-line-height / $font-size-rem) * 2;
+    margin-bottom: #{$margin}#{'rem'};
+  } @else if $bottom-margin-adjust == 1 {
+    $margin: ($base-line-height / $font-size-rem);
+    margin-bottom: #{$margin}#{'rem'};
+  } @else if $bottom-margin-adjust == 1.5 {
+    $margin: ($base-line-height / $font-size-rem) * 1.5;
+    margin-bottom: #{$margin}#{'rem'};
+  } @else if $bottom-margin-adjust == .5 {
+    $margin: ($base-line-height / $font-size-rem) / 2;
+    margin-bottom: #{$margin}#{'rem'};
+  } @else if $bottom-margin-adjust == .25 {
+    $margin: ($base-line-height / $font-size-rem) / 4;
+    margin-bottom: #{$margin}#{'rem'};
+  } @else if $bottom-margin-adjust == null {
+    $margin: $base-line-height / $font-size-rem;
+    margin-bottom: #{$margin}#{'rem'};
+  }
+}

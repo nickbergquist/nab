@@ -2,20 +2,23 @@
   'mono': (
     'black': #000,
     'dark': #333,
-    'base': #666,
+    'mid': #666,
     'light': #888,
     'white': #fff,
   ),
-  'brown': (
-    'light': #f7f4ef,
-    'medium': #f7f4ee,
-    'dark': #aaa392,
-  ),
   'main': (
-    'red': #c03,
-    'yellow': #fecc09,
-    'navy-blue': #4b5b6e,
-    'pale-blue': #ccc,
-    'cobalt-blue': #0077db,
+    'primary': #c03,
+    'accent': #fecc09,
+    'secondary': #4b5b6e,
+    'background': #ccc,
+    'foreground': #0077db,
+  )
+);
+
+$palette-tools: (
+  'opacity': (
+    'light': .75,
+    'medium': .5,
+    'dark': .25
   )
 );

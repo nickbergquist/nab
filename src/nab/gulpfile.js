@@ -28,10 +28,10 @@ gulp.task('pub-css', () => {
         .pipe(gulp.dest(cssOutput));
 });
 
-gulp.task('watch', function () {
+gulp.task('watch', () => {
     return gulp
         .watch(scssInput, ['pub-css'])
-        .on('change', function (event) {
+        .on('change', (event) => {
             console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
         });
 });

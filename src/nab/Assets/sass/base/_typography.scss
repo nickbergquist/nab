@@ -1,5 +1,45 @@
-﻿$font-stack: Arial, Helvetica, sans-serif;
+﻿
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../../../wwwroot/type/OpenSans.woff') format('woff'), url('../../../wwwroot/type/OpenSans.svg#OpenSans') format('svg');
+}
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../../../wwwroot/type/OpenSans-Regular.eot?#iefix') format('embedded-opentype'), url('../../../wwwroot/type/OpenSans-Regular.woff2') format('woff2'), url('../../../wwwroot/type/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans-Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../../../wwwroot/type/OpenSans-Bold.eot?#iefix') format('embedded-opentype'), url('../../../wwwroot/type/OpenSans-Bold.woff') format('woff'), url('../../../wwwroot/type/OpenSans-Bold.svg#OpenSans-Bold') format('svg'), url('../../../wwwroot/type/OpenSans-Bold.ttf') format('truetype');
+}
+
+html {
+  font-size: $base-font-size;
+}
 
 body {
-  font-family: $font-stack;
+  font: #{$base-body-font-size} / #{$base-line-height} $base-font-family;
+}
+
+h1 {
+  @include font-process(36px);
+}
+
+h2 {
+  @include font-process(24px);
+}
+
+h3 {
+  @include font-process(18px);
+}
+
+p {
+  @include font-process(14px);
 }
