@@ -1,7 +1,17 @@
+// helpers or utilities - mixins, functions, config., etc.
 @import 'utils/module';
+
+// vendors and external stylesheets
 @import 'vendors/module';
+
+// base, common styles for all pages
 @import 'base/module';
+
+// macro layout styles - header, footer, etc.
 @import 'layout/module';
+
+// micro layout styles - page components
 @import 'components/module';
+
+// specific page stylesheets
 @import 'pages/module';
-@import 'themes/module';

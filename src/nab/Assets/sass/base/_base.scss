@@ -1,1 +1,16 @@
-﻿
+﻿html,
+body {
+  height: 100%;
+}
+
+
+
+h1 {
+  color: palette-colour('main', 'primary');
+  text-shadow: 3px 3px 1px palette-colour('mono', 'light');
+}
+
+h2 {
+  color: palette-colour('main', 'primary');
+  text-shadow: 3px 3px 1px palette-colour('main', 'background');
+}

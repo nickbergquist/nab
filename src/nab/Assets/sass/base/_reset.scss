@@ -1,82 +1,76 @@
-﻿body,
-div,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
+﻿// http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation
+body {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box; // not inherited by default
+}
+
+* {
+  &,
+  &::before,
+  &::after {
+    box-sizing: inherit; // apply desired box model to all but allowing local change
+  }
+}
+
 h1,
 h2,
 h3,
 h4,
-h5,
-h6,
-pre,
-form,
-fieldset,
-legend,
-input,
-textarea,
 p,
 blockquote,
-th,
-td,
-figure {
+figure,
+ol,
+ul {
   margin: 0;
   padding: 0;
- }
+}
 
-//correct block display not defined in IE6/7/8/9 & FF3
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
 main,
-nav,
-section {
+li {
   display: block;
 }
 
-// correct inline-block display not defined in IE6/7/8/9 & FF3
-audio,
-canvas,
-video {
-  display: inline-block;
+h1,
+h2,
+h3,
+h4 {
+  font-size: inherit;
 }
 
-// prevent modern browsers from displaying 'audio' without controls
-audio {
-  :not([controls]) {
-    display: none;
-  }
+strong {
+  font-weight: bold;
 }
 
-fieldset,
-img,
-table {
-  border-color: inherit;
-  border-style: none;
-  border-width: 0;
+a,
+button {
+  color: inherit;
+  transition: .3s;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  //-webkit-font-smoothing: inherit;
+  letter-spacing: inherit;
+  overflow: visible;
+}
+
+img {
+  border: 0;
+  height: auto;
+  max-width: 100%;
 }
 
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-textarea {
-  vertical-align: top;
-}
-
-ul {
-  list-style: none;
-}
-
-ol {
-  list-style-position: inside;
 }
