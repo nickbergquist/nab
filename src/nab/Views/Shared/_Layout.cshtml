@@ -1,29 +1,34 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en-us">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - nab</title>
 
     <environment names="Development,Staging,Production">
-        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/main.css" />
     </environment>
 </head>
 <body>
-   
-    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">nab</a>
-            
-    <ul class="nav navbar-nav">
-        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-    </ul>
-           
-    <main>
+    <a class="skip off-screen" href="#main">Skip to content</a>
+    <header role="banner">
+        <p class="logo-site">
+            <a asp-area="" asp-controller="Home" asp-action="Index">nab</a>
+            <br>
+            Cats, cats, cats
+        </p>
+        <nav role="navigation">
+            <ul class="menu-site">
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main" class="main" role="main">
         @RenderBody()
     </main>
-
-    <footer>
+    <footer role="contentinfo">
         <p>&copy; 2016 - @DateTime.Now.Year nab</p>
     </footer>
 
