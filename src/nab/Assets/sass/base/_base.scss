@@ -1,6 +1,7 @@
-﻿html,
+﻿
+
 body {
-  height: 100%;
+  min-width: $min-viewport-width;
 }
 
 
@@ -14,3 +15,26 @@ h2 {
   color: palette-colour('main', 'primary');
   text-shadow: 3px 3px 1px palette-colour('main', 'background');
 }
+
+
+.just-a-test {
+  @include mq-small {
+    font-size: 18px;
+  }
+
+  @include mq-medium {
+    font-size: 20px;
+  }
+
+  font-size: 16px;
+}
+
+.vendor-prefix-test {
+  //display: flex;
+  //flex: 0 0 8.4em;
+  //flex-wrap: wrap;
+  //justify-content: space-between;
+  justify-content: center;
+}
+
+

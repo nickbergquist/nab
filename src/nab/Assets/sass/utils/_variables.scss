@@ -8,3 +8,23 @@ $base-line-height: 1.5;
 $base-font-size: 62.5%; // (62.5/100)*16 : 10px  1 rem
 $base-body-font-size: 1.4rem;
 $base-font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+
+
+/////////////////
+//  viewport   //
+/////////////////
+
+$min-viewport-width: 320px;
+$max-viewport-width: 1280px;
+
+
+///////////////
+//  inputs   //
+///////////////
+
+$button-padding: .5rem 1rem;
+$button-font-size: 12px;             // 1 factor below base 16px in modular type scale
+//$button-bgcolor: #d9534f;     // the primary brand color
+$button-border-width: 1px;    // border width for all form inputs
+//$button-color-hover: #fcfcfc; // the light/white brand color
+

@@ -1,4 +1,9 @@
-﻿$palettes: (
+﻿
+////////////////
+//  palette   //
+////////////////
+
+$palettes: (
   'mono': (
     'black': #000,
     'dark': #333,
@@ -23,3 +28,14 @@ $palette-tools: (
   )
 );
 
+//////////////////////
+//  media queries   //
+//////////////////////
+
+$breakpoints: (
+  base: 320px,
+  small: 480px,
+  medium: 768px,
+  large: 1024px,
+  full: 1280px
+);

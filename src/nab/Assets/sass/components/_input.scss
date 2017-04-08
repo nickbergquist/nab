@@ -1,0 +1,40 @@
+﻿
+%button {
+  border-style: solid;
+  border-width: $button-border-width;
+  display: inline-block;
+  font-size: $button-font-size;
+  font-weight: bold;
+  padding: $button-padding;
+}
+
+.button-form {
+  @extend %button;
+  @include button-theme(palette-colour('main', 'primary'));
+
+  &.secondary {
+    @include button-theme(palette-colour('main', 'accent'));
+  }
+}
+
+.button-action {
+  @extend %button;
+  @include button-theme(palette-colour('main', 'secondary'));
+
+  &.secondary {
+    @include button-theme(palette-colour('main', 'foreground'));
+  }
+}
+
+
+
+
+
+button {
+  background-color: palette-colour('main', 'primary');
+}
+
+.button-test {
+  background-color: palette-colour-alpha('mono', 'dark', 'medium');
+}
+
