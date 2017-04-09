@@ -4,6 +4,10 @@ body {
   min-width: $min-viewport-width;
 }
 
+main {
+  overflow: hidden;
+  padding: 2.5rem percentage(20/strip-units($max-viewport-width)) 1.25rem; // 10px either side at full width
+}
 
 
 h1 {
@@ -13,28 +17,21 @@ h1 {
 
 h2 {
   color: palette-colour('main', 'primary');
-  text-shadow: 3px 3px 1px palette-colour('main', 'background');
+  text-shadow: 3px 3px 1px palette-colour('mono', 'light');
 }
 
 
-.just-a-test {
-  @include mq-small {
-    font-size: 18px;
+.skip {
+  &:active {
+    position: static;
   }
 
-  @include mq-medium {
-    font-size: 20px;
+  &:focus {
+    position: static;
   }
-
-  font-size: 16px;
 }
 
-.vendor-prefix-test {
-  //display: flex;
-  //flex: 0 0 8.4em;
-  //flex-wrap: wrap;
-  //justify-content: space-between;
-  justify-content: center;
-}
+
+
 
 

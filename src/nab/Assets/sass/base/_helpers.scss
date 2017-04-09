@@ -1,0 +1,44 @@
+﻿.hide { // invisible & inaudible
+  display: none;
+  visibility: hidden;
+}
+
+.off-screen { // invisible only
+  height: 1px;
+  left: -999em;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+.off-screen-replacement-selector { // invisible only
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.vendor-prefix-test {
+  //display: flex;
+  //flex: 0 0 8.4em;
+  //flex-wrap: wrap;
+  //justify-content: space-between;
+  justify-content: center;
+}
+
+.just-a-test {
+  @include mq-small {
+    font-size: 18px;
+  }
+
+  @include mq-medium {
+    font-size: 20px;
+  }
+
+  font-size: 16px;
+}
+

@@ -8,7 +8,7 @@
   padding: $button-padding;
 }
 
-.button-form {
+button {
   @extend %button;
   @include button-theme(palette-colour('main', 'primary'));
 
@@ -17,24 +17,18 @@
   }
 }
 
-.button-action {
+[type='submit'] {
   @extend %button;
-  @include button-theme(palette-colour('main', 'secondary'));
-
-  &.secondary {
-    @include button-theme(palette-colour('main', 'foreground'));
-  }
+  @include button-theme(palette-colour('main', 'primary'));
 }
 
 
 
 
+//button {
+//  background-color: palette-colour('main', 'primary');
+//}
 
-button {
-  background-color: palette-colour('main', 'primary');
-}
-
-.button-test {
-  background-color: palette-colour-alpha('mono', 'dark', 'medium');
-}
-
+//.button-test {
+//  background-color: palette-colour-alpha('mono', 'dark', 'medium');
+//}

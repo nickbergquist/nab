@@ -45,7 +45,8 @@ strong {
 }
 
 a,
-button {
+button,
+[type='submit'] {
   color: inherit;
   transition: .3s;
 }
@@ -54,7 +55,8 @@ button {
 //  text-decoration: none;
 //}
 
-button {
+button,
+[type='submit'] {
   background: none;
   border: 0;
   cursor: pointer;
