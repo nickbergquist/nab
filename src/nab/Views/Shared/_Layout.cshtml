@@ -9,19 +9,30 @@
         <link rel="stylesheet" href="~/css/main.css" />
     </environment>
 </head>
-<body>
+<body class="@ViewData["Page class"]">
     <a class="skip off-screen" href="#main">Skip to content</a>
     <header role="banner">
-        <p class="logo-site">
-            <a asp-area="" asp-controller="Home" asp-action="Index">nab</a>
-            <br>
-            Cats, cats, cats
-        </p>
+        <div class="content-restrict">
+            <p class="logo-site">
+                <a asp-area="" asp-controller="Home" asp-action="Index">nab</a>
+                <br>
+                Cats, cats, cats
+            </p>
+        </div>
         <nav role="navigation">
             <ul class="menu-site">
-                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                <li class="anchor-home">
+                    <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="anchor-about">
+                    @Html.ActionLink("About", "Index", "About")
+                </li>
+                <li class="anchor-work">
+                    @Html.ActionLink("Work", "Index", "Work")
+                </li>
+                <li class="anchor-contact">
+                    <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -29,8 +40,10 @@
         @RenderBody()
     </main>
     <footer role="contentinfo">
-        <p>&copy; 2016 - @DateTime.Now.Year nab</p>
-    </footer>
+        <div class="content-restrict">
+            <p>&copy; 2016 - @DateTime.Now.Year nab</p>
+        </div>
+</footer>
 
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
