@@ -51,9 +51,17 @@ button,
   transition: .3s;
 }
 
-//a {
-//  text-decoration: none;
-//}
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    text-decoration: underline;
+  }
+}
 
 button,
 [type='submit'] {

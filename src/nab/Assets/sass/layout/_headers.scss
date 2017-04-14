@@ -1,18 +1,32 @@
 ﻿header {
-  background: url('../images/20.jpg') no-repeat fixed center center / cover;
-  min-height: 100%;
-  outline: 1px dotted palette-colour('main', 'foreground');
+  background: url('../images/background-monster.jpg') no-repeat fixed center center / cover;
   overflow: hidden;
-  padding: 0 percentage(20/strip-units($max-viewport-width));  // 10px either side at full width
-  position: relative;
 
-  &::after {
-    background-color: palette-colour-alpha('mono', 'dark', 'dark');
-    bottom: 0;
-    content: '';
-    left: 0;
+  .page-home & {
+    min-height: 100%;
+  }
+
+  //&::after {
+  //  background-color: palette-colour-alpha('mono', 'dark', 'dark');
+  //  bottom: 0;
+  //  content: '';
+  //  left: 0;
+  //  position: absolute;
+  //  right: 0;
+  //  top: 0;
+  //}
+}
+
+.logo-site {
+  margin-bottom: 0;
+  z-index: 1;
+
+  .page-home & {
+    left: 50%;
+    margin-left: -160px;
+    padding: 25px;
     position: absolute;
-    right: 0;
-    top: 0;
+    top: 40%;
+    width: 320px;
   }
 }
