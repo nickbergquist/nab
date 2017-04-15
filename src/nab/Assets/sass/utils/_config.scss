@@ -1,30 +1,57 @@
 ﻿
+//////////////
+//  fonts   //
+//////////////
+
+$fonts: (
+  base-sans-serif: (
+    family: 'OpenSans-Regular, Arial, Helvetica, sans-serif',
+    line-height: 1.5,
+    size-proportional: 62.5%, // (62.5/100)*16 : 10px : 1rem
+    size-root: 1.4rem,
+  ),
+  base-serif: (
+    family: 'OldStandard-regular, Book Antiqua, Palatino Linotype, serif',
+    line-height: 1.5,
+    size-proportional: 62.5%, // (62.5/100)*16 : 10px : 1rem
+    size-root: 1.4rem,
+  )
+);
+
+
 ////////////////
 //  palette   //
 ////////////////
 
 $palettes: (
-  'mono': (
-    'black': #000,
-    'dark': #333,
-    'mid': #666,
-    'light': #888,
-    'white': #fff,
+  mono: (
+    darkest: #000,
+    dark: #333,
+    mid: #666,
+    light: #888,
+    lightest: #fff,
   ),
-  'main': (
-    'primary': #c03,
-    'secondary': #0077db,
-    'background': #ccc,
-    'foreground': #4b5b6e,
-    'accent': #fecc09,
+  main: (
+    primary: #c03,
+    secondary: #0077db,
+    background: #ccc,
+    foreground: #4b5b6e,
+    accent: #fecc09,
+  ),
+  alternate: (
+    primary: #39552f,
+    secondary: #a80054,
+    background: #c93,
+    foreground: #898421,
+    accent: #eeecb9,
   )
 );
 
 $palette-tools: (
-  'opacity': (
-    'light': .75,
-    'medium': .5,
-    'dark': .25
+  opacity: (
+    light: .75,
+    medium: .5,
+    dark: .25
   )
 );
 

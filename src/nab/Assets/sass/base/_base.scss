@@ -4,8 +4,7 @@ body {
   min-width: $min-viewport-width;
 }
 
-main,
-.content-restrict {
+main {
   @include mq-full {
     margin-left: auto;
     margin-right: auto;
@@ -17,13 +16,13 @@ main,
 }
 
 h1 {
-  color: palette-colour('main', 'primary');
-  text-shadow: 3px 3px 1px palette-colour('mono', 'light');
+  color: palette-colour($palette-main, 'primary');
+  text-shadow: 3px 3px 1px palette-colour($palette-mono, 'light');
 }
 
 h2 {
-  color: palette-colour('main', 'primary');
-  text-shadow: 3px 3px 1px palette-colour('mono', 'light');
+  color: palette-colour($palette-main, 'primary');
+  text-shadow: 3px 3px 1px palette-colour($palette-mono, 'light');
 }
 
 .content-restrict {

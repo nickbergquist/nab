@@ -1,13 +1,36 @@
 ﻿
+///////////////
+//  images   //
+///////////////
+
+$background-header: '../images/background-monster.jpg' !default;
+
+
+///////////////
+//  inputs   //
+///////////////
+
+$button-padding: .5rem 1rem !default;
+$button-font-size: 1.3rem !default;
+$button-border-width: 1px !default;
+
+
+////////////////
+//  palette   //
+////////////////
+
+$palette-main: main !default;
+$palette-mono: mono;
 
 
 //////////////////////
 //  typographical   //
 //////////////////////
-$base-line-height: 1.5;
-$base-font-size: 62.5%; // (62.5/100)*16 : 10px : 1rem
-$base-body-font-size: 1.4rem;
-$base-font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
+$base-type: base-sans-serif !default;
+$base-line-height: map-get(map-get($fonts, $base-type), line-height);
+$base-font-size: map-get(map-get($fonts, $base-type), size-proportional);
+$base-body-font-size: map-get(map-get($fonts, $base-type), size-root);
+$base-font-family: map-get(map-get($fonts, $base-type), family);
 
 
 /////////////////
@@ -16,15 +39,3 @@ $base-font-family: OpenSans-Regular, Arial, Helvetica, sans-serif;
 
 $min-viewport-width: 320px;
 $max-viewport-width: 1280px;
-
-
-///////////////
-//  inputs   //
-///////////////
-
-$button-padding: .5rem 1rem;
-$button-font-size: 1.3rem;
-//$button-bgcolor: #d9534f;     // the primary brand color
-$button-border-width: 1px;
-//$button-color-hover: #fcfcfc; // the light/white brand color
-

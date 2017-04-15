@@ -1,14 +1,16 @@
 ﻿
-@include font-face('OpenSans', '../../../wwwroot/type/OpenSans');
-@include font-face('OpenSans-Regular', '../../../wwwroot/type/OpenSans-Regular');
-@include font-face('OpenSans-Bold', '../../../wwwroot/type/OpenSans-Bold');
+@include font-face('OpenSans-Regular', '../type/OpenSans-Regular');
+@include font-face('OpenSans-Bold', '../type/OpenSans-Bold');
+
+@include font-face('OldStandard-Regular', '../type/oldstandard-regular');
+
 
 html {
   font-size: $base-font-size;
 }
 
 body {
-  font: #{$base-body-font-size} / #{$base-line-height} $base-font-family;
+  font: #{$base-body-font-size} / #{$base-line-height} #{$base-font-family};
 }
 
 h1 {

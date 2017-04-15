@@ -10,21 +10,21 @@
 
 button {
   @extend %button;
-  @include button-theme(palette-colour('main', 'primary'));
+  @include button-theme(palette-colour($palette-main, 'primary'));
 
   &.secondary {
-    @include button-theme(palette-colour('main', 'accent'));
+    @include button-theme(palette-colour($palette-main, 'accent'));
   }
 }
 
 [type='submit'] {
   @extend %button;
-  @include button-theme(palette-colour('main', 'primary'));
+  @include button-theme(palette-colour($palette-main, 'primary'));
 }
 
 
 
 
 //.button-test {
-//  background-color: palette-colour-alpha('mono', 'dark', 'medium');
+//  background-color: palette-colour-alpha($palette-mono, 'dark', 'medium');
 //}
