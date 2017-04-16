@@ -1,5 +1,5 @@
 ﻿header {
-  background: url($background-header) no-repeat fixed center center / cover;
+  background: url('#{$background-header}') no-repeat fixed center center / cover;
   overflow: hidden;
 
   .page-home & {
