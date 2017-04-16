@@ -14,18 +14,17 @@ body {
 }
 
 h1 {
-  @include font-process(36px);
+  @include font-process($h1-size);
 }
 
 h2 {
-  @include font-process(24px);
+  @include font-process($h2-size);
 }
 
 h3 {
-  @include font-process(18px);
+  @include font-process($h3-size);
 }
 
 p {
-  @include font-process(14px);
+  @include font-process($paragraph-size);
 }
-
