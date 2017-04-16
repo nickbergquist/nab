@@ -1,22 +1,25 @@
-﻿var gulp = require('gulp');
-var loadJsonFile = require('load-json-file');
-var sass = require('gulp-sass');
-var sassLint = require('gulp-sass-lint');
-//var concat = require('gulp-concat');
-var autoprefixer = require('gulp-autoprefixer');
-var cleanCss = require('gulp-clean-css');
-var sourcemaps = require('gulp-sourcemaps');
-var config = loadJsonFile.sync('gulpconfig.json');
-var scssInput = config.paths.stylesheets.scss;
-var cssOutput = config.paths.stylesheets.css;
+﻿const gulp = require('gulp');
+const util = require('gulp-util');
+const fileExists = require('file-exists');
+const loadJsonFile = require('load-json-file');
+const sass = require('gulp-sass');
+const sassLint = require('gulp-sass-lint');
+const autoprefixer = require('gulp-autoprefixer');
+const cleanCss = require('gulp-clean-css');
+const sourcemaps = require('gulp-sourcemaps');
+const config = loadJsonFile.sync('gulpconfig.json');
+const scssInput = config.paths.stylesheets.scss;
+const scssIgnore = config.paths.stylesheets.ignore;
+const scssThemes = config.paths.stylesheets.themes;
+const cssOutput = config.paths.stylesheets.css;
 
-var sassOptions = {
+const sassOptions = {
     errLogToConsole: true
 };
 
 gulp.task('dev-css', () => {
     return gulp
-        .src(scssInput)
+        .src([scssInput, scssIgnore])
         .pipe(sassLint())
         .pipe(sassLint.format())
         .pipe(sassLint.failOnError())
@@ -29,16 +32,37 @@ gulp.task('dev-css', () => {
 
 gulp.task('pub-css', () => {
     return gulp
-        .src(scssInput)
+        .src([scssInput, scssIgnore])
         .pipe(sass(sassOptions).on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(cleanCss())
         .pipe(gulp.dest(cssOutput));
 });
 
+// usage: gulp theme --name name-of-theme
+gulp.task('theme', () => {
+    let themePath = scssThemes + util.env.name + '.scss';
+    let filePresent = fileExists.sync(themePath);
+
+    if (filePresent) {
+        util.log('File at ' + themePath + ' exists, starting pipe...');
+        return gulp
+            .src(themePath)
+            .pipe(sass(sassOptions).on('error', sass.logError))
+            .pipe(autoprefixer())
+            .pipe(cleanCss().on('end', () => util.log('CSS minified')))
+            .pipe(gulp.dest(cssOutput));
+    } else {
+        util.log('File at ' + themePath + ' missing, check the SASS theme name matches the task name parameter.');
+        util.log('usage: gulp theme --name name-of-theme');
+        util.log('Exiting process');
+        process.exit();
+    }
+});
+
 gulp.task('watch', () => {
     return gulp
-        .watch(scssInput, ['dev-css'])
+        .watch([scssInput, scssIgnore], ['dev-css'])
         .on('change', (event) => {
             console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
         });

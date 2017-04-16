@@ -241,3 +241,4 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 /src/nab/wwwroot/images/pspbrwse.jbf
+/src/nab/wwwroot/css/test.css

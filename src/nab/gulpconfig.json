@@ -7,7 +7,9 @@
     },
     "stylesheets": {
       "scss": "./Assets/sass/**/*.scss",
-      "css": "./wwwroot/css"
+      "css": "./wwwroot/css",
+      "ignore": "!./Assets/sass/themes/*",
+      "themes": "./Assets/sass/themes/"
     },
     "javascript": {
       "src": "./src/script/**/*.js",
