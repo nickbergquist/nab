@@ -11,7 +11,8 @@
     "gulp-sass-lint": "1.3.2",
     "gulp-clean-css": "3.0.4",
     "gulp-util": "3.0.8",
-    "file-exists": "3.0.2"
+    "file-exists": "3.0.2",
+    "gulp-rename": "1.2.2"
   },
   "dependencies": {}
 }

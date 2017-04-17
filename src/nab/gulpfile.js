@@ -1,6 +1,7 @@
 ﻿const gulp = require('gulp');
 const util = require('gulp-util');
 const fileExists = require('file-exists');
+const rename = require('gulp-rename');
 const loadJsonFile = require('load-json-file');
 const sass = require('gulp-sass');
 const sassLint = require('gulp-sass-lint');
@@ -8,6 +9,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const cleanCss = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 const config = loadJsonFile.sync('gulpconfig.json');
+
 const scssInput = config.paths.stylesheets.scss;
 const scssIgnore = config.paths.stylesheets.ignore;
 const scssThemes = config.paths.stylesheets.themes;
@@ -26,8 +28,8 @@ gulp.task('dev-css', () => {
         .pipe(sourcemaps.init())
         .pipe(sass(sassOptions).on('error', sass.logError))
         .pipe(autoprefixer())
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(cssOutput));
+        .pipe(sourcemaps.write().on('end', () => util.log('Sourcemap created')))
+        .pipe(gulp.dest(cssOutput).on('end', () => util.log('CSS written to ' + cssOutput)));
 });
 
 gulp.task('pub-css', () => {
@@ -35,8 +37,8 @@ gulp.task('pub-css', () => {
         .src([scssInput, scssIgnore])
         .pipe(sass(sassOptions).on('error', sass.logError))
         .pipe(autoprefixer())
-        .pipe(cleanCss())
-        .pipe(gulp.dest(cssOutput));
+        .pipe(cleanCss().on('end', () => util.log('CSS minified')))
+        .pipe(gulp.dest(cssOutput).on('end', () => util.log('CSS written to ' + cssOutput)));
 });
 
 // usage: gulp theme --name name-of-theme
@@ -51,10 +53,11 @@ gulp.task('theme', () => {
             .pipe(sass(sassOptions).on('error', sass.logError))
             .pipe(autoprefixer())
             .pipe(cleanCss().on('end', () => util.log('CSS minified')))
-            .pipe(gulp.dest(cssOutput));
+            .pipe(rename('main.css'))
+            .pipe(gulp.dest(cssOutput).on('end', () => util.log('CSS written to ' + cssOutput)));
     } else {
         util.log('File at ' + themePath + ' missing, check the SASS theme name matches the task name parameter.');
-        util.log('usage: gulp theme --name name-of-theme');
+        util.log('Usage: gulp theme --name name-of-theme');
         util.log('Exiting process');
         process.exit();
     }
