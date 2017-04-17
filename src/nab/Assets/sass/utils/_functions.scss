@@ -2,6 +2,7 @@
 ////////////////
 //  palette   //
 ////////////////
+
 @function palette-colour($palette, $colour) {
   @return map-get(map-get($palettes, $palette), $colour);
 }
@@ -16,9 +17,11 @@
   @return rgba($colour, $opacity);
 }
 
+
 //////////////////////
 //  typographical   //
 //////////////////////
+
 @function basefont-to-pixel($base-fs) {
   // see http://pxtoem.com/
   @if $base-fs == 37.5% {
@@ -46,9 +49,11 @@
   }
 }
 
+
 //////////////////////////
 //  string operations   //
 //////////////////////////
+
 @function strip-units($number) {
   @return $number / ($number * 0 + 1);
 }

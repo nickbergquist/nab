@@ -1,4 +1,32 @@
-﻿$background-header: '../../images/background-paws.jpg';
+﻿@import '../utils/module';
+
+///////////////
+//  images   //
+///////////////
+
+$background-header: '../../images/background-rainbow.jpg';
+
+
+////////////////
+//  palette   //
+////////////////
+
 $palette-main: alternate;
+
+$home-anchor-colour: palette-colour($palette-main, 'primary');
+$about-anchor-colour: palette-colour($palette-main, 'secondary');
+$work-anchor-colour: palette-colour($palette-main, 'background');
+$contact-anchor-colour: palette-colour($palette-main, 'foreground');
+
+
+///////////////
+//  inputs   //
+///////////////
+
+$button-primary-colour: palette-colour($palette-main, 'primary');
+$button-secondary-colour: palette-colour-alpha($palette-main, 'secondary', 'dark');
+$button-accent-colour: palette-colour($palette-main, 'accent');
+
+
 
 @import '../main';

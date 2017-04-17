@@ -10,21 +10,14 @@
 
 button {
   @extend %button;
-  @include button-theme(palette-colour($palette-main, 'primary'));
+  @include button-theme($button-primary-colour, $button-accent-colour);
 
   &.secondary {
-    @include button-theme(palette-colour($palette-main, 'accent'));
+    @include button-theme($button-secondary-colour);
   }
 }
 
 [type='submit'] {
   @extend %button;
-  @include button-theme(palette-colour($palette-main, 'primary'));
+  @include button-theme($button-primary-colour);
 }
-
-
-
-
-//.button-test {
-//  background-color: palette-colour-alpha($palette-mono, 'dark', 'medium');
-//}

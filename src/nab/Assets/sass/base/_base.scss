@@ -15,14 +15,14 @@ main {
   padding: 2.5rem percentage(20/strip-units($max-viewport-width)) 1.25rem; // 10px either side at full width
 }
 
-h1 {
-  color: palette-colour($palette-main, 'primary');
-  text-shadow: 3px 3px 1px palette-colour($palette-mono, 'light');
-}
-
-h2 {
-  color: palette-colour($palette-main, 'primary');
-  text-shadow: 3px 3px 1px palette-colour($palette-mono, 'light');
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $heading-colour;
+  text-shadow: 2px 2px 1px palette-colour($palette-mono, 'light');
 }
 
 .content-restrict {

@@ -2,6 +2,7 @@
   width: 100%;
 
   & a {
+    color: $nav-main-anchor-colour;
     display: block;
     padding: 1.2rem 0;
   }
@@ -16,6 +17,22 @@
     table-layout: fixed;
     text-align: center;
     width: 100%;
+  }
+
+  & .anchor-home {
+    background-color: $home-anchor-colour;
+  }
+
+  & .anchor-about {
+    background-color: $about-anchor-colour;
+  }
+
+  & .anchor-work {
+    background-color: $work-anchor-colour;
+  }
+
+  & .anchor-contact {
+    background-color: $contact-anchor-colour;
   }
 
   .page-home & {

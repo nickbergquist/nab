@@ -3,14 +3,14 @@
 //  inputs   //
 ///////////////
 
-@mixin button-theme($color, $color-text-hover: palette-colour($palette-main, 'secondary')) {
+@mixin button-theme($colour, $colour-text-hover: palette-colour($palette-main, 'secondary')) {
   background-color: transparent;
-  border-color: $color;
-  color: $color;
+  border-color: $colour;
+  color: $colour;
 
   &:hover {
-    background-color: $color;
-    color: $color-text-hover;
+    background-color: $colour;
+    color: $colour-text-hover;
   }
 }
 
