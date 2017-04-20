@@ -5,16 +5,22 @@
 
 $fonts: (
   base-sans-serif: (
+    name: 'OpenSans-Regular',
     family: 'OpenSans-Regular, Arial, Helvetica, sans-serif',
+    path: '../type/OpenSans-Regular',
     line-height: 1.5,
     size-proportional: 62.5%, // (62.5/100)*16 : 10px : 1rem
     size-root: 1.4rem,
   ),
-  base-serif: (
-    family: 'OldStandard-regular, Book Antiqua, Palatino Linotype, serif',
-    line-height: 1.5,
-    size-proportional: 62.5%, // (62.5/100)*16 : 10px : 1rem
-    size-root: 1.4rem,
+  base-heading-sans-serif: (
+    name: 'ArchivoBlack-Regular',
+    family: 'ArchivoBlack-Regular, sans-serif',
+    path: '../type/archivoblack-regular-webfont',
+  ),
+  alt-emphasis-sans-serif: (
+    name: 'FrancoisOne-Regular',
+    family: 'FrancoisOne-Regular, sans-serif',
+    path: '../type/francoisone-regular-webfont',
   )
 );
 

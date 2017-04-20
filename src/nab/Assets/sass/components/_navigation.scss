@@ -2,9 +2,14 @@
   width: 100%;
 
   & a {
+    @include font-process($nav-root-size, 0);
+
     color: $nav-main-anchor-colour;
     display: block;
-    padding: 1.2rem 0;
+    font-family: #{$alt-emphasis-font-family};
+    font-variant: small-caps;
+    padding: 1rem 0;
+    text-transform: capitalize;
   }
 
   & li {
@@ -20,19 +25,27 @@
   }
 
   & .anchor-home {
-    background-color: $home-anchor-colour;
+    & a {
+      background-color: $home-anchor-colour;
+    }
   }
 
   & .anchor-about {
-    background-color: $about-anchor-colour;
+    & a {
+      background-color: $about-anchor-colour;
+    }
   }
 
   & .anchor-work {
-    background-color: $work-anchor-colour;
+    & a {
+      background-color: $work-anchor-colour;
+    }
   }
 
   & .anchor-contact {
-    background-color: $contact-anchor-colour;
+    & a {
+      background-color: $contact-anchor-colour;
+    }
   }
 
   .page-home & {

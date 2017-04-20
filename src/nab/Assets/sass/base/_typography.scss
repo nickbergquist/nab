@@ -1,16 +1,24 @@
-﻿
-@include font-face('OpenSans-Regular', '../type/OpenSans-Regular');
-@include font-face('OpenSans-Bold', '../type/OpenSans-Bold');
+﻿// base typographical rules only 
 
-@include font-face('OldStandard-Regular', '../type/oldstandard-regular');
+@include font-face($base-type-name, $base-type-path);
+@include font-face($base-heading-type-name, $base-heading-type-path);
+@include font-face($alt-emphasis-type-name, $alt-emphasis-type-path);
 
+body {
+  font: #{$base-body-font-size} / #{$base-line-height} #{$base-font-family};
+}
 
 html {
   font-size: $base-font-size;
 }
 
-body {
-  font: #{$base-body-font-size} / #{$base-line-height} #{$base-font-family};
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: #{$base-heading-font-family};
 }
 
 h1 {
