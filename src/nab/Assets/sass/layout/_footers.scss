@@ -1,4 +1,9 @@
 ﻿footer {
   background-color: palette-colour('mono', 'dark');
   color: palette-colour('mono', 'lightest');
+  overflow: hidden;
+
+  & .content-restrict {
+    padding-top: 1.25rem;
+  }
 }

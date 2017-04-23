@@ -1,5 +1,5 @@
 ﻿
-%button {
+%button-standard {
   border-style: solid;
   border-width: $button-border-width;
   display: inline-block;
@@ -8,8 +8,13 @@
   padding: $button-padding;
 }
 
-button {
-  @extend %button;
+[type='submit'] {
+  @extend %button-standard;
+  @include button-theme($button-primary-colour);
+}
+
+.button {
+  @extend %button-standard;
   @include button-theme($button-primary-colour, $button-accent-colour);
 
   &.secondary {
@@ -17,7 +22,19 @@ button {
   }
 }
 
-[type='submit'] {
-  @extend %button;
-  @include button-theme($button-primary-colour);
+%button-show {
+  overflow: hidden;
+  text-indent: -999em;
+}
+
+.nav-button-show {
+  @extend %button-show;
+
+  background-color: palette-colour-alpha('mono', 'dark', 'dark');
+  height: 50px;
+  width: 50px;
+
+  &:hover {
+    background-color: $button-primary-colour;
+  }
 }

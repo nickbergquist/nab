@@ -52,7 +52,7 @@ gulp.task('theme', () => {
             .src(themePath)
             .pipe(sass(sassOptions).on('error', sass.logError))
             .pipe(autoprefixer())
-            .pipe(cleanCss().on('end', () => util.log('CSS minified')))
+            //.pipe(cleanCss().on('end', () => util.log('CSS minified')))
             .pipe(rename('main.css'))
             .pipe(gulp.dest(cssOutput).on('end', () => util.log('CSS written to ' + cssOutput)));
     } else {

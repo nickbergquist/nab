@@ -1,4 +1,54 @@
-﻿html,
+﻿// .page-home
+
 body {
-  height: 100%;
+  .page-home & {
+    height: 100%;
+  }
+}
+
+header {
+  .page-home & {
+    min-height: 100%;
+  }
+}
+
+html {
+  &.page-home {
+    height: 100%;
+  }
+}
+
+nav {
+  @include mq-small {
+    .page-home & {
+      bottom: 0;
+      position: absolute;
+    }
+  }
+
+  .page-home & {
+    margin-top: 8rem;
+  }
+}
+
+@include mq-base {
+  .page-home {
+    & nav {
+      &.show {
+        animation: shift-horizontal .4s ease-in-out;
+      }
+    }
+  }
+}
+
+.logo-site {
+  .page-home & {
+    background-color: palette-colour-alpha('mono', 'dark', 'dark');
+    left: 50%;
+    margin-left: -160px;
+    padding: 25px;
+    position: absolute;
+    top: 40%;
+    width: 320px;
+  }
 }

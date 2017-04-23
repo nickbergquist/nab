@@ -1,5 +1,21 @@
 ﻿nav {
-  width: 100%;
+  @include mq-small {
+    & li {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    & ul {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+    }
+  }
+
+  clear: both;
+  margin-top: 4rem;
+  position: relative;
+  text-align: center;
 
   & a {
     @include font-process($nav-root-size, 0);
@@ -8,20 +24,8 @@
     display: block;
     font-family: #{$alt-emphasis-font-family};
     font-variant: small-caps;
-    padding: 1rem 0;
+    padding: 1.25rem percentage(20/strip-units($max-viewport-width)) 1rem; // 10px either side at full width
     text-transform: capitalize;
-  }
-
-  & li {
-    display: table-cell;
-    vertical-align: middle;
-  }
-
-  & ul {
-    display: table;
-    table-layout: fixed;
-    text-align: center;
-    width: 100%;
   }
 
   & .anchor-home {
@@ -47,12 +51,25 @@
       background-color: $contact-anchor-colour;
     }
   }
-
-  .page-home & {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-  }
 }
 
+.js {
+  @include mq-base {
+    & nav {
+      height: 1px;
+      left: -999em;
+      overflow: hidden;
+      position: absolute;
+
+      &.show {
+        //animation: shift-horizontal .4s ease-in-out; // for home page
+        animation: shift-vertical .4s ease-in-out;
+        height: auto;
+        left: auto;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+      }
+    }
+  }
+}
