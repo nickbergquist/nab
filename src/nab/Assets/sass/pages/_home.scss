@@ -34,8 +34,8 @@ nav {
 @include mq-base {
   .page-home {
     & nav {
-      &.show {
-        animation: shift-horizontal .4s ease-in-out;
+      &.active {
+        animation: shift-horizontal .2s ease-in-out;
       }
     }
   }
@@ -43,7 +43,8 @@ nav {
 
 .logo-site {
   .page-home & {
-    background-color: palette-colour-alpha('mono', 'dark', 'dark');
+    background-color: palette-colour-alpha('mono', 'mid', 'dark');
+    box-shadow: 0 0 125px palette-colour-alpha('mono', 'lightest', 'light');
     left: 50%;
     margin-left: -160px;
     padding: 25px;

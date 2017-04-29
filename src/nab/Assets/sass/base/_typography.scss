@@ -3,6 +3,7 @@
 @include font-face($base-type-name, $base-type-path);
 @include font-face($base-heading-type-name, $base-heading-type-path);
 @include font-face($alt-emphasis-type-name, $alt-emphasis-type-path);
+@include font-face($svg-icons-type-name, $svg-icons-type-path);
 
 body {
   font: #{$base-body-font-size} / #{$base-line-height} #{$base-font-family};

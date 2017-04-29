@@ -1,4 +1,20 @@
 ﻿nav {
+  @include mq-base {
+    height: 1px;
+    left: -999em;
+    overflow: hidden;
+    position: absolute;
+
+    &.active {
+      animation: shift-vertical .4s ease-in-out;
+      height: auto;
+      left: auto;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+  }
+
   @include mq-small {
     & li {
       display: table-cell;
@@ -13,7 +29,6 @@
   }
 
   clear: both;
-  margin-top: 4rem;
   position: relative;
   text-align: center;
 
@@ -49,27 +64,6 @@
   & .anchor-contact {
     & a {
       background-color: $contact-anchor-colour;
-    }
-  }
-}
-
-.js {
-  @include mq-base {
-    & nav {
-      height: 1px;
-      left: -999em;
-      overflow: hidden;
-      position: absolute;
-
-      &.show {
-        //animation: shift-horizontal .4s ease-in-out; // for home page
-        animation: shift-vertical .4s ease-in-out;
-        height: auto;
-        left: auto;
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-      }
     }
   }
 }

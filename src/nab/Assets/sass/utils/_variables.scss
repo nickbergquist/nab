@@ -36,6 +36,11 @@ $alt-emphasis-type-name: map-get(map-get($fonts, $alt-emphasis-type), name);
 $alt-emphasis-type-path: map-get(map-get($fonts, $alt-emphasis-type), path);
 $alt-emphasis-font-family: map-get(map-get($fonts, $alt-emphasis-type), family);
 
+$svg-icons-type: svg-icons !default; // map in _config.scss and override in themes\*.scss
+$svg-icons-type-name: map-get(map-get($fonts, $svg-icons-type), name);
+$svg-icons-type-path: map-get(map-get($fonts, $svg-icons-type), path);
+$svg-icons-font-family: map-get(map-get($fonts, $svg-icons-type), family);
+
 $heading-colour: palette-colour($palette-main, 'accent') !default;
 $h1-size: 36px !default;
 $h2-size: 24px !default;

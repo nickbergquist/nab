@@ -23,18 +23,49 @@
 }
 
 %button-show {
-  overflow: hidden;
-  text-indent: -999em;
+  position: relative;
+
+  &::before {
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: color .9s ease-in-out;
+  }
 }
 
 .nav-button-show {
   @extend %button-show;
 
-  background-color: palette-colour-alpha('mono', 'dark', 'dark');
-  height: 50px;
-  width: 50px;
+  background-color: rgba(0, 0, 0, .1);
+  color: #fff;
+  font-family: 'menu-fontello';
+  font-size: 35px;
+  height: 5rem;
+  width: 5rem;
+
+  &::before {
+    content: '\e800';
+    padding: .7rem;
+  }
 
   &:hover {
-    background-color: $button-primary-colour;
+    color: #000;
+  }
+
+  &.active {
+    color: #000;
+    
+    &::before {
+      content: '\e801';
+    }
+  }
+
+  & span {
+    display: inline-block;
+    overflow: hidden;
+    text-indent: -999em;
   }
 }
