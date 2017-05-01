@@ -22,6 +22,9 @@
 //  typographical   //
 //////////////////////
 
+/// Sets the base font size as a proportion of the default base user-agent font size, generally 16px
+/// @param $base-fs - font size as percentage
+/// @return - base font size as pixels
 @function basefont-to-pixel($base-fs) {
   // see http://pxtoem.com/
   @if $base-fs == 37.5% {
@@ -47,6 +50,12 @@
   } @else if $base-fs == 100% {
     @return 16;
   }
+}
+
+/// 
+@function calc-rem($font-size-px) {
+  $font-size-rem: strip-units($font-size-px) / basefont-to-pixel($base-font-proportional-size);
+  @return $font-size-rem;
 }
 
 

@@ -34,6 +34,8 @@ nav {
 @include mq-base {
   .page-home {
     & nav {
+      box-shadow: 0 5px 10px 1px $edge-shadow-colour;
+
       &.active {
         animation: shift-horizontal .2s ease-in-out;
       }
@@ -45,6 +47,7 @@ nav {
   .page-home & {
     background-color: palette-colour-alpha('mono', 'mid', 'dark');
     box-shadow: 0 0 125px palette-colour-alpha('mono', 'lightest', 'light');
+    font-size: calc-rem(21px)#{'rem'};
     left: 50%;
     margin-left: -160px;
     padding: 25px;

@@ -66,8 +66,8 @@
   }
 }
 
-@mixin font-process($font-size, $bottom-margin-adjust: null) {
-  $font-size-rem: strip-units($font-size) / basefont-to-pixel($base-font-size);
+@mixin font-size-margin-ratio($font-size-px, $bottom-margin-adjust: null) {
+  $font-size-rem: calc-rem($font-size-px);
   font-size: #{$font-size-rem}#{'rem'};
 
   @if $bottom-margin-adjust == 0 {

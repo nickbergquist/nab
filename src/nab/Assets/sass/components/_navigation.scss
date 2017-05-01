@@ -28,12 +28,13 @@
     }
   }
 
+  box-shadow: 0 0 3px 1px $edge-shadow-colour;
   clear: both;
   position: relative;
   text-align: center;
 
   & a {
-    @include font-process($nav-root-size, 0);
+    @include font-size-margin-ratio($nav-root-size, 0);
 
     color: $nav-main-anchor-colour;
     display: block;
@@ -41,6 +42,10 @@
     font-variant: small-caps;
     padding: 1.25rem percentage(20/strip-units($max-viewport-width)) 1rem; // 10px either side at full width
     text-transform: capitalize;
+
+    &:hover {
+      //background-color: darken(20%);
+    }
   }
 
   & .anchor-home {
