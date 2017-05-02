@@ -2,15 +2,14 @@
   @include mq-base {
     height: 1px;
     left: -999em;
-    overflow: hidden;
     position: absolute;
+    width: auto;
 
     &.active {
-      animation: shift-vertical .4s ease-in-out;
+      animation: shift-horizontal .3s ease-in-out;
       height: auto;
       left: auto;
-      overflow: hidden;
-      position: relative;
+      top: 8rem;
       width: 100%;
     }
   }
@@ -28,9 +27,8 @@
     }
   }
 
-  box-shadow: 0 0 3px 1px $edge-shadow-colour;
+  box-shadow: 0 5px 10px 1px $edge-shadow-colour;
   clear: both;
-  position: relative;
   text-align: center;
 
   & a {

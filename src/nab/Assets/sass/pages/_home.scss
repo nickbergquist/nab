@@ -9,6 +9,7 @@ body {
 header {
   .page-home & {
     min-height: 100%;
+    overflow: hidden;
   }
 }
 
@@ -37,7 +38,7 @@ nav {
       box-shadow: 0 5px 10px 1px $edge-shadow-colour;
 
       &.active {
-        animation: shift-horizontal .2s ease-in-out;
+        top: auto;
       }
     }
   }

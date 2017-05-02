@@ -11,17 +11,10 @@
   width: 1px;
 }
 
-//.vendor-prefix-test {
-//display: flex;
-//flex: 0 0 8.4em;
-//flex-wrap: wrap;
-//justify-content: space-between;
-//justify-content: center;
-//}
 
 @keyframes shift-horizontal {
   0% {
-    transform: translate(100%, 0);
+    transform: translate(-100%, 0);
   }
 
   100% {
@@ -31,7 +24,7 @@
 
 @keyframes shift-vertical {
   0% {
-    transform: translate(0, 100%);
+    transform: translate(0, -100%);
   }
 
   100% {

@@ -1,7 +1,7 @@
 ﻿header {
   background: url('#{$background-header}') no-repeat fixed center center / cover;
   box-shadow: 0 -5px 4px -5px $edge-shadow-colour inset;
-  overflow: hidden;
+  min-height: 8rem;
 
   &::before {
     box-shadow: 0 0 3px 1px $edge-shadow-colour;
