@@ -2,14 +2,10 @@
 
 namespace nab.Controllers
 {
-    public class HomeController : Controller
+    public class ContactController : Controller
     {
+        // GET: /<controller>/
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Error()
         {
             return View();
         }

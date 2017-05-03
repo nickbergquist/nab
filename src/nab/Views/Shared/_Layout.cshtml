@@ -14,9 +14,9 @@
     <header role="banner">
         <div class="content-restrict">
             <p class="logo-site">
-                <a asp-area="" asp-controller="Home" asp-action="Index">nab</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index">Nick Bergquist</a>
                 <br>
-                Cats, cats, cats
+                Front-end developer
             </p>
         </div>
         <nav id="nav-site" role="navigation">
@@ -25,13 +25,14 @@
                     <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                 </li>
                 <li class="anchor-about">
+
                     @Html.ActionLink("About", "Index", "About")
                 </li>
                 <li class="anchor-work">
                     @Html.ActionLink("Work", "Index", "Work")
                 </li>
                 <li class="anchor-contact">
-                    <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                    @Html.ActionLink("Contact", "Index", "Contact")
                 </li>
             </ul>
         </nav>
