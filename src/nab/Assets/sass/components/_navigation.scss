@@ -27,7 +27,7 @@
     }
   }
 
-  box-shadow: 0 5px 10px 1px $edge-shadow-colour;
+  box-shadow: 0 3px 8px 1px $edge-shadow-colour;
   clear: both;
   text-align: center;
 
@@ -40,33 +40,29 @@
     font-variant: small-caps;
     padding: 1.25rem percentage(20/strip-units($max-viewport-width)) 1rem; // 10px either side at full width
     text-transform: capitalize;
-
-    &:hover {
-      //background-color: darken(20%);
-    }
   }
 
   & .anchor-home {
     & a {
-      background-color: $home-anchor-colour;
+      @include background-plus-hover-colour($home-colour);
     }
   }
 
   & .anchor-about {
     & a {
-      background-color: $about-anchor-colour;
+      @include background-plus-hover-colour($about-colour);
     }
   }
 
   & .anchor-work {
     & a {
-      background-color: $work-anchor-colour;
+      @include background-plus-hover-colour($work-colour);
     }
   }
 
   & .anchor-contact {
     & a {
-      background-color: $contact-anchor-colour;
+      @include background-plus-hover-colour($contact-colour);
     }
   }
 }

@@ -15,6 +15,11 @@ $background-header: '../images/background-paws.jpg' !default;
 $palette-main: main !default;
 $palette-mono: mono;
 
+$home-colour: palette-colour($palette-main, 'primary') !default;
+$about-colour: palette-colour($palette-main, 'accent') !default;
+$work-colour: palette-colour($palette-main, 'foreground') !default;
+$contact-colour: palette-colour($palette-main, 'secondary') !default;
+
 
 //////////////////////
 //  typographical   //
@@ -43,7 +48,7 @@ $svg-icons-type-name: map-get(map-get($fonts, $svg-icons-type), name);
 $svg-icons-type-path: map-get(map-get($fonts, $svg-icons-type), path);
 $svg-icons-font-family: map-get(map-get($fonts, $svg-icons-type), family);
 
-$heading-colour: palette-colour($palette-main, 'accent') !default;
+$heading-colour: darken(palette-colour($palette-main, 'background'), 5%) !default;
 $h1-size: 36px !default;
 $h2-size: 24px !default;
 $h3-size: 18px !default;
@@ -83,10 +88,6 @@ $button-nav-width: 50px !default;
 ///////////////////
 
 $nav-main-anchor-colour: palette-colour($palette-mono, 'lightest') !default;
-$home-anchor-colour: palette-colour($palette-main, 'primary') !default;
-$about-anchor-colour: palette-colour($palette-main, 'accent') !default;
-$work-anchor-colour: palette-colour($palette-main, 'foreground') !default;
-$contact-anchor-colour: palette-colour($palette-main, 'secondary') !default;
 
 
 ///////////////////////////

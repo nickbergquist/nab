@@ -1,4 +1,16 @@
-﻿
+﻿////////////////
+//  palette   //
+////////////////
+
+@mixin background-plus-hover-colour($base-colour, $change: 5%) {
+  background-color: $base-colour;
+
+  &:hover {
+    background-color: darken($base-colour, $change);
+  }
+}
+
+
 ///////////////
 //  inputs   //
 ///////////////
@@ -66,6 +78,10 @@
   }
 }
 
+/// Converts font-size to rem units. Provides default margin-bottom as a proportional value based on the font-size and line-height.
+/// @param $font-size-px - font size as pixels
+/// @param $bottom-margin-adjust - optional value from 0 (no margin-bottom) to 2 (margin-bottom adjustments)
+/// @return - font-size in rem units and default or configurable margin-bottom 
 @mixin font-size-margin-ratio($font-size-px, $bottom-margin-adjust: null) {
   $font-size-rem: calc-rem($font-size-px);
   font-size: #{$font-size-rem}#{'rem'};

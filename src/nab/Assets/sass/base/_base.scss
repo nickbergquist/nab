@@ -1,7 +1,16 @@
 ﻿
 
 body {
+  background-color: palette-colour($palette-mono, 'lightest');
   min-width: $min-viewport-width;
+}
+
+html {
+  background-color: palette-colour('mono', 'dark');
+
+  &.page-home {
+    background-color: palette-colour('mono', 'lightest');
+  }
 }
 
 main {
@@ -22,7 +31,12 @@ h4,
 h5,
 h6 {
   color: $heading-colour;
-  text-shadow: 2px 2px 1px palette-colour($palette-mono, 'light');
+  text-shadow: 1px 1px 1px palette-colour($palette-mono, 'dark');
+}
+
+h1 {
+  color: darken(palette-colour($palette-main, 'background'), 20%);
+  text-align: center;
 }
 
 .content-restrict {
