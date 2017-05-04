@@ -1,1 +1,86 @@
 ﻿
+.form-main {
+  overflow: hidden;
+  padding: 1.25rem percentage(20/strip-units($max-viewport-width)) 1.8em; // 10px either side at full width
+  position: relative;
+
+  & dd {
+    float: none;
+    margin-bottom: 1em;
+
+    & span {
+      display: block;
+      padding-top: .5rem;
+    }
+
+    @include mq-small {
+      float: left;
+      width: 75%;
+    }
+  }
+
+  & dl {
+    @include mq-small {
+      margin: 1rem auto .75rem;
+    }
+
+    @include mq-medium {
+      width: 85%;
+    }
+  }
+
+  & dt {
+    float: none;
+
+    &::after {
+      content: '';
+    }
+
+    @include mq-small {
+      clear: left;
+      float: left;
+      margin-top: 1rem;
+      padding-right: percentage(20/strip-units($max-viewport-width));
+      width: 25%;
+    }
+
+    @include mq-large {
+      //width: 30%;
+    }
+  }
+
+  @include mq-medium {
+    padding: 1rem percentage(126/strip-units($max-viewport-width)) 1.5rem;
+  }
+
+  @include mq-large {
+    margin: 2rem auto 2rem;
+    width: 70%;
+  }
+
+  & legend {
+    @include font-size-margin-ratio($h3-size);
+  }
+}
+
+.advice-form-fields {
+  margin-bottom: 0;
+  position: absolute;
+  right: percentage(20/strip-units($max-viewport-width));
+  top: 1.8rem;
+  width: auto;
+
+  &::before {
+    content: '*';
+    left: -5px;
+    position: relative;
+  }
+}
+
+.required {
+  &::after {
+    content: '*';
+    left: 2px;
+    position: relative;
+  }
+}

@@ -5,6 +5,26 @@ body {
   min-width: $min-viewport-width;
 }
 
+dd {
+  float: right;
+  width: auto;
+}
+
+dl {
+  margin-bottom: .75rem;
+  overflow: hidden;
+}
+
+dt {
+  clear: left;
+  float: left;
+  width: auto;
+
+  &::after {
+    content: ':';
+  }
+}
+
 html {
   background-color: palette-colour('mono', 'dark');
 
@@ -31,7 +51,7 @@ h4,
 h5,
 h6 {
   color: $heading-colour;
-  text-shadow: 1px 1px 1px palette-colour($palette-mono, 'dark');
+  text-shadow: 1px 1px 1px $edge-shadow-colour;
 }
 
 h1 {

@@ -21,7 +21,12 @@ h3,
 h4,
 p,
 blockquote,
+dd,
+dl,
+dt,
+fieldset,
 figure,
+legend,
 ol,
 ul {
   margin: 0;
@@ -69,6 +74,12 @@ button,
   border: 0;
   cursor: pointer;
   padding: 0;
+}
+
+fieldset {
+  border-color: inherit;
+  border-style: none;
+  border-width: 0;
 }
 
 img {

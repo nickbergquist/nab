@@ -4,15 +4,39 @@
 }
 
 <h1>@ViewData["Title"]</h1>
-<p>Contact details</p>
+<p>Get in touch here</p>
 
 
-
-
-
-
-<button class="button">button-primary</button>
-
-<button class="button secondary">button-secondary</button>
-
-<input type="submit" value="Input - submit" />
+<form id="contact-form" action="" method="post" class="form-main" role="form">
+    <p class="advice-form-fields">Required fields</p>
+    <fieldset>
+        <legend>Drop me a line</legend>
+        <dl>
+            <dt>
+                <label class="required" for="form-contact-name">Your name</label>
+            </dt>
+            <dd>
+                <input id="form-contact-name" name="form-contact-name" type="text" />
+            </dd>
+            <dt>
+                <label class="required" for="form-contact-email">Your e-mail</label>
+            </dt>
+            <dd>
+                <input id="form-contact-email" name="form-contact-email" type="text" />
+            </dd>
+            <dt>
+                <label class="required" for="form-contact-subject">Subject</label>
+            </dt>
+            <dd>
+                <input id="form-contact-subject" name="form-contact-subject" type="text" />
+            </dd>
+            <dt>
+                <label class="required" for="form-contact-body">Message</label>
+            </dt>
+            <dd>
+                <textarea id="form-contact-body" name="form-contact-body" rows="6"></textarea>
+            </dd>
+        </dl>
+    </fieldset>
+    <input type="submit" value="Submit" />
+</form>

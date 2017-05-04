@@ -8,20 +8,6 @@
   padding: #{calc-rem($button-vert-padding)}#{'rem'} #{calc-rem($button-horiz-padding)}#{'rem'};
 }
 
-[type='submit'] {
-  @extend %button-standard;
-  @include button-theme($button-primary-colour);
-}
-
-.button {
-  @extend %button-standard;
-  @include button-theme($button-primary-colour, $button-accent-colour);
-
-  &.secondary {
-    @include button-theme($button-secondary-colour);
-  }
-}
-
 %button-show {
   position: relative;
 
@@ -35,6 +21,59 @@
   }
 }
 
+%input-text-standard {
+  border-style: solid;
+  border-width: $input-text-standard-border-width;
+  padding: #{calc-rem($input-text-standard-vert-padding)}#{'rem'} $input-text-standard-horiz-padding;
+  width: 100%;
+}
+
+// standard script buttons
+.button {
+  @extend %button-standard;
+  @include button-theme($button-primary-colour, $button-accent-colour);
+
+  &.secondary {
+    @include button-theme($button-secondary-colour);
+  }
+}
+
+// standard body form components
+.form-main {
+  & [type='text'] {
+    @extend %input-text-standard;
+    @include form-input-theme($input-text-standard-border-colour);
+  }
+
+  & [type='password'] {
+    @extend %input-text-standard;
+    @include form-input-theme($input-text-standard-border-colour);
+  }
+
+  & [type='email'] {
+    @extend %input-text-standard;
+    @include form-input-theme($input-text-standard-border-colour);
+  }
+
+  & [type='submit'] {
+    @extend %button-standard;
+    @include button-theme($button-primary-colour);
+  }
+
+  & select {
+    @extend %input-text-standard;
+    @include form-input-theme($input-text-standard-border-colour);
+  }
+
+  & textarea {
+    @extend %input-text-standard;
+    @include form-input-theme($input-text-standard-border-colour);
+
+    height: 12rem;
+  }
+}
+
+// specific script buttons
 .nav-button-show {
   @extend %button-show;
 

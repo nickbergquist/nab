@@ -1,6 +1,7 @@
 ﻿footer {
-  background-color: palette-colour('main', 'primary');
-  box-shadow: 0 1px 8px 5px $edge-shadow-colour;
+  background-color: palette-colour('main', 'background');
+  border-top: 1px solid palette-colour('mono', 'lightest');
+  box-shadow: 0 0 3px 2px $edge-shadow-colour;
   color: palette-colour('mono', 'lightest');
   overflow: hidden;
 

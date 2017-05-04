@@ -26,6 +26,16 @@
   }
 }
 
+@mixin form-input-theme($colour, $colour-text-hover: palette-colour($palette-main, 'secondary'), $colour-background: transparent) {
+  background-color: $colour-background;
+  border-color: $colour;
+
+  &:focus {
+    border-color: $colour-text-hover;
+    transition: border-color .5s ease 0s;
+  }
+}
+
 
 //////////////////////
 //  media queries   //
