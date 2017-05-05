@@ -37,9 +37,11 @@ $fonts: (
 $palettes: (
   mono: (
     darkest: #000,
-    dark: #333,
-    mid: #666,
-    light: #999,
+    darker: #333,
+    dark: #666,
+    mid: #999,
+    light: #ccc,
+    lighter: #eee,
     lightest: #fff,
   ),
   main: (
