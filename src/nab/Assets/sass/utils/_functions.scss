@@ -52,7 +52,6 @@
   }
 }
 
-/// 
 @function calc-rem($font-size-px) {
   $font-size-rem: strip-units($font-size-px) / basefont-to-pixel($base-font-proportional-size);
   @return $font-size-rem;

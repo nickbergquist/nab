@@ -55,8 +55,8 @@ $h3-size: 18px !default;
 $h4-size: 14px !default;
 
 $nav-root-size: 18px !default;
-
-$paragraph-size: 14px !default;
+$paragraph-size: 16px !default;
+$form-legend: 90% Arial !default;
 
 
 ///////////////
@@ -64,10 +64,11 @@ $paragraph-size: 14px !default;
 ///////////////
 
 $button-border-width: 1px !default;
-$button-font-size: 13px !default;
-$button-vert-padding: 5px !default;
-$button-horiz-padding: 10px !default;
-$button-primary-colour: palette-colour($palette-main, 'primary') !default;
+$button-font-size: 18px !default;
+$button-font-family: $alt-emphasis-font-family !default;
+$button-vert-padding: 10px !default;
+$button-horiz-padding: 20px !default;
+$button-primary-colour: palette-colour($palette-mono, 'lightest') !default;
 $button-secondary-colour: palette-colour-alpha($palette-main, 'secondary', 'dark') !default;
 $button-accent-colour: palette-colour($palette-main, 'accent') !default;
 
@@ -83,10 +84,15 @@ $button-nav-height: 50px !default;
 $button-nav-width: 50px !default;
 
 $input-text-standard-border-width: 2px !default;
-$input-text-standard-border-colour: palette-colour($palette-main, 'primary') !default;
+$input-text-standard-border-colour: palette-colour($palette-main, 'secondary') !default;
+$input-text-standard-border-focus-colour: palette-colour($palette-main, 'primary') !default;
 $input-text-standard-vert-padding: 8px !default;
 $input-text-standard-horiz-padding: 8px !default;
+$input-text-standard-shadow-colour: palette-colour($palette-mono, 'lighter') !default;
 
+$legend-colour: palette-colour($palette-main, 'secondary') !default;
+$legend-font-family: $base-heading-font-family !default;
+$legend-font-size: 21px !default;
 
 
 ///////////////////

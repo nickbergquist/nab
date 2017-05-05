@@ -1,11 +1,15 @@
 ﻿
 %button-standard {
+  border-radius: 5px;
   border-style: solid;
   border-width: $button-border-width;
   display: inline-block;
+  font-family: #{$button-font-family};
   font-size: calc-rem($button-font-size)#{'rem'};
-  font-weight: bold;
+  font-variant: small-caps;
   padding: #{calc-rem($button-vert-padding)}#{'rem'} #{calc-rem($button-horiz-padding)}#{'rem'};
+  text-shadow: 1px 1px 2px $edge-shadow-colour;
+  text-transform: capitalize;
 }
 
 %button-show {
@@ -31,7 +35,7 @@
 // standard script buttons
 .button {
   @extend %button-standard;
-  @include button-theme($button-primary-colour, $button-accent-colour);
+  @include button-theme;
 
   &.secondary {
     @include button-theme($button-secondary-colour);
@@ -42,34 +46,35 @@
 .form-main {
   & [type='text'] {
     @extend %input-text-standard;
-    @include form-input-theme($input-text-standard-border-colour);
+    @include form-input-theme;
   }
 
   & [type='password'] {
     @extend %input-text-standard;
-    @include form-input-theme($input-text-standard-border-colour);
+    @include form-input-theme;
   }
 
   & [type='email'] {
     @extend %input-text-standard;
-    @include form-input-theme($input-text-standard-border-colour);
+    @include form-input-theme;
   }
 
   & [type='submit'] {
     @extend %button-standard;
-    @include button-theme($button-primary-colour);
+    @include button-theme;
   }
 
   & select {
     @extend %input-text-standard;
-    @include form-input-theme($input-text-standard-border-colour);
+    @include form-input-theme;
   }
 
   & textarea {
     @extend %input-text-standard;
-    @include form-input-theme($input-text-standard-border-colour);
+    @include form-input-theme;
 
-    height: 12rem;
+    font: $form-legend;
+    height: 18rem;
   }
 }
 

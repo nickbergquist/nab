@@ -6,7 +6,7 @@
 
   & dd {
     float: none;
-    margin-bottom: 1em;
+    margin-bottom: 3em;
 
     & span {
       display: block;
@@ -16,6 +16,16 @@
     @include mq-small {
       float: left;
       width: 75%;
+    }
+
+    @include mq-medium {
+      & [name='form-contact-name'] {
+        width: 70%;
+      }
+
+      & [name='form-contact-email'] {
+        width: 85%;
+      }
     }
   }
 
@@ -43,34 +53,40 @@
       padding-right: percentage(20/strip-units($max-viewport-width));
       width: 25%;
     }
-
-    @include mq-large {
-      //width: 30%;
-    }
   }
 
   @include mq-medium {
-    padding: 1rem percentage(126/strip-units($max-viewport-width)) 1.5rem;
+    margin: 2rem auto;
+    padding: 1rem 0 1.5rem;
+    width: 85%;
   }
 
   @include mq-large {
-    margin: 2rem auto 2rem;
-    width: 70%;
+    width: 65%;
   }
 
   & legend {
-    @include font-size-margin-ratio($h3-size);
+    @include font-size-margin-ratio($legend-font-size);
+
+    color: $legend-colour;
+    font-family: #{$legend-font-family};
+  }
+
+  & [type='submit'] {
+    float: right;
   }
 }
 
 .advice-form-fields {
+  font-size: inherit;
   margin-bottom: 0;
   position: absolute;
   right: percentage(20/strip-units($max-viewport-width));
-  top: 1.8rem;
+  top: 2rem;
   width: auto;
 
   &::before {
+    color: $input-text-standard-border-colour;
     content: '*';
     left: -5px;
     position: relative;
@@ -79,6 +95,7 @@
 
 .required {
   &::after {
+    color: $input-text-standard-border-colour;
     content: '*';
     left: 2px;
     position: relative;

@@ -15,23 +15,40 @@
 //  inputs   //
 ///////////////
 
-@mixin button-theme($colour, $colour-text-hover: palette-colour($palette-main, 'secondary')) {
-  background-color: transparent;
-  border-color: $colour;
+@mixin button-theme(
+  $colour: palette-colour($palette-mono, 'lighter'),
+  $colour-text-hover: palette-colour($palette-mono, 'lighter'),
+  $colour-background: palette-colour($palette-main, 'secondary'),
+  $colour-background-hover: palette-colour($palette-main, 'primary'),
+  $colour-border: palette-colour($palette-main, 'foreground')
+  ) {
+  background-color: $colour-background;
+  border-color: $colour-border;
+  box-shadow: -1px 1px 2px $edge-shadow-colour, palette-colour-alpha($palette-mono, 'lightest', 'dark') 0 1px 0 inset;
   color: $colour;
 
+  &:focus {
+    background-color: $colour-background-hover;
+    color: $colour-text-hover;
+  }
+
   &:hover {
-    background-color: $colour;
+    background-color: $colour-background-hover;
     color: $colour-text-hover;
   }
 }
 
-@mixin form-input-theme($colour, $colour-text-hover: palette-colour($palette-main, 'secondary'), $colour-background: transparent) {
+@mixin form-input-theme(
+  $colour-border: $input-text-standard-border-colour,
+  $colour-text-focus: $input-text-standard-border-focus-colour,
+  $colour-background: transparent
+  ) {
   background-color: $colour-background;
-  border-color: $colour;
+  border-color: $colour-border;
+  box-shadow: -10px 10px 0 $input-text-standard-shadow-colour;
 
   &:focus {
-    border-color: $colour-text-hover;
+    border-color: $colour-text-focus;
     transition: border-color .5s ease 0s;
   }
 }
