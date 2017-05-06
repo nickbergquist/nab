@@ -8,7 +8,7 @@ using System.Linq;
 namespace nab.Helpers
 {
     [HtmlTargetElement(Attributes = "is-active-route")]
-    public class ActiveRouteTag : TagHelper
+    public class ActiveRouteTagHelper : TagHelper
     {
         private IDictionary<string, string> _routeValues;
 
