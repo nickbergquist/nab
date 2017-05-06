@@ -18,7 +18,23 @@
   @include mq-small {
     & li {
       display: table-cell;
+      position: relative;
       vertical-align: middle;
+
+      &.active {
+        &::after {
+          border-left: 25px solid transparent;
+          border-right: 25px solid transparent;
+          border-top: 15px solid palette-colour($palette-mono, 'dark');
+          bottom: -1.5rem;
+          content: '';
+          height: 0;
+          left: 50%;
+          position: absolute;
+          transform: translate(-50%, 0);
+          width: 0;
+        }
+      }
     }
 
     & ul {
