@@ -19,11 +19,11 @@
     }
 
     @include mq-medium {
-      & [name='form-contact-name'] {
+      & [name='SenderName'] { // 
         width: 70%;
       }
 
-      & [name='form-contact-email'] {
+      & [name='SenderEmailAddress'] {
         width: 85%;
       }
     }

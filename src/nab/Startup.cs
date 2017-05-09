@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using nab.Services;
+using nab.Settings;
 
 namespace nab
 {
@@ -29,6 +27,13 @@ namespace nab
         {
             // Add framework services.
             services.AddMvc();
+
+            // Read email settings from appsettings.json
+            services.Configure<EmailSettings>(Configuration.GetSection("Email"));
+
+            // Register the interface and implementation email service class so that each 
+            // time a IEmailService is requested, a MessageServices instance is delivered.
+            services.AddTransient<IEmailService, MessageServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

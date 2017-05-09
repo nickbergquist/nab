@@ -1,42 +1,53 @@
-﻿@{
+﻿@model nab.Models.UserEmail
+
+@{
     ViewData["Title"] = "Contact";
     ViewData["Page class"] = "page-contact";
 }
 
 <h1>@ViewData["Title"]</h1>
-<p>If you wish to get in touch regarding complaints, praise, previous work, current work or indeed future work please do so here.</p>
 
+@if ((bool)ViewData["success"] == false)
+{
+    <p>If you wish to get in touch regarding complaints (surely not), praise, previous work, current work or indeed future work please do so here.</p>
 
-<form id="contact-form" action="" method="post" class="form-main" role="form">
-    <p class="advice-form-fields">Required fields</p>
-    <fieldset>
-        <legend>Drop me a line</legend>
-        <dl>
-            <dt>
-                <label class="required" for="form-contact-name">Your name</label>
-            </dt>
-            <dd>
-                <input id="form-contact-name" name="form-contact-name" type="text" />
-            </dd>
-            <dt>
-                <label class="required" for="form-contact-email">Your e-mail</label>
-            </dt>
-            <dd>
-                <input id="form-contact-email" name="form-contact-email" type="text" />
-            </dd>
-            <dt>
-                <label class="required" for="form-contact-subject">Subject</label>
-            </dt>
-            <dd>
-                <input id="form-contact-subject" name="form-contact-subject" type="text" />
-            </dd>
-            <dt>
-                <label class="required" for="form-contact-body">Message</label>
-            </dt>
-            <dd>
-                <textarea id="form-contact-body" name="form-contact-body" rows="6"></textarea>
-            </dd>
-        </dl>
-    </fieldset>
-    <input type="submit" value="Send" />
-</form>
+    <form asp-controller="Contact" asp-action="Email" method="post" class="form-main" role="form">
+        <p class="advice-form-fields">Required fields</p>
+        <fieldset>
+            <legend>Drop me a line</legend>
+            <dl>
+                <dt>
+                    <label asp-for="SenderName" class="required">Your name</label>
+                </dt>
+                <dd>
+                    <input asp-for="SenderName" type="text" />
+                    <span asp-validation-for="SenderName"></span>
+                </dd>
+                <dt>
+                    <label asp-for="SenderEmailAddress" class="required">Your e-mail</label>
+                </dt>
+                <dd>
+                    <input asp-for="SenderEmailAddress" type="text" />
+                    <span asp-validation-for="SenderEmailAddress"></span>
+                </dd>
+                <dt>
+                    <label asp-for="EmailSubject" class="required">Subject</label>
+                </dt>
+                <dd>
+                    <input asp-for="EmailSubject" type="text" />
+                </dd>
+                <dt>
+                    <label asp-for="EmailMessage" class="required">Message</label>
+                </dt>
+                <dd>
+                    <textarea asp-for="EmailMessage" rows="6"></textarea>
+                </dd>
+            </dl>
+        </fieldset>
+        <input type="submit" value="Send" />
+    </form>
+}
+else
+{
+    <p>Thanks</p>
+}
