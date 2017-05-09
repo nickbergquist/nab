@@ -18,9 +18,6 @@ $(function () {
         }
     }).listen(50); // milliseconds
 
-    if ($('.page-contact').length) {
-        $('#form-contact-name').focus();
-    }
 });
 
 
