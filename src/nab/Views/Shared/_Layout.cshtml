@@ -22,16 +22,16 @@
         <nav id="nav-site" role="navigation">
             <ul>
                 <li is-active-route asp-controller="Home" class="anchor-home">
-                    <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    <a asp-controller="Home" asp-action="Index">Home</a>
                 </li>
                 <li is-active-route asp-controller="About" class="anchor-about">
-                    @Html.ActionLink("About", "Index", "About")
+                    <a asp-controller="About" asp-action="Index">About</a>
                 </li>
                 <li is-active-route asp-controller="Work" class="anchor-work">
-                    @Html.ActionLink("Work", "Index", "Work")
+                    <a asp-controller="Work" asp-action="Index">Work</a>
                 </li>
                 <li is-active-route asp-controller="Contact" class="anchor-contact">
-                    @Html.ActionLink("Contact", "Index", "Contact")
+                    <a asp-controller="Contact" asp-action="Index">Contact</a>
                 </li>
             </ul>
         </nav>
