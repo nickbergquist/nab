@@ -109,12 +109,6 @@ namespace nab.Services
                     }
 
                     await client.DisconnectAsync(true).ConfigureAwait(false);
-                
-
-                    //await client.ConnectAsync(es.MailServerAddress, Convert.ToInt32(es.MailServerPort), SecureSocketOptions.Auto).ConfigureAwait(false);
-                    //await client.AuthenticateAsync(new NetworkCredential(es.UserId, es.UserPassword));
-                    //await client.SendAsync(emailMessage).ConfigureAwait(false);
-                    //await client.DisconnectAsync(true).ConfigureAwait(false);
                 }
             }
             catch (Exception ex)
