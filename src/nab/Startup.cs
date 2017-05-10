@@ -15,6 +15,7 @@ namespace nab
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile("securesettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
@@ -28,8 +29,10 @@ namespace nab
             // Add framework services.
             services.AddMvc();
 
-            // Read email settings from appsettings.json
-            services.Configure<EmailSettings>(Configuration.GetSection("Email"));
+            if (Configuration.GetSection("Email") != null)
+            {
+                services.Configure<EmailSettings>(Configuration.GetSection("Email"));
+            }
 
             // Register the interface and implementation email service class so that each 
             // time a IEmailService is requested, a MessageServices instance is delivered.

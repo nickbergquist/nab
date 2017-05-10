@@ -242,3 +242,6 @@ ModelManifest.xml
 .fake/
 /src/nab/wwwroot/images/pspbrwse.jbf
 /src/nab/wwwroot/css/test.css
+
+# Local project specific
+securesettings.json
