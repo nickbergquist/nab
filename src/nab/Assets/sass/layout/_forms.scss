@@ -1,16 +1,20 @@
 ﻿
 .form-main {
+  margin: 1.25rem percentage(20/strip-units($max-viewport-width)) 1.8em; // 10px either side at full width
   overflow: hidden;
-  padding: 1.25rem percentage(20/strip-units($max-viewport-width)) 1.8em; // 10px either side at full width
   position: relative;
 
   & dd {
     float: none;
     min-height: 8rem;
 
+    &:last-child {
+      min-height: 21rem;
+    }
+
     & span {
       display: block;
-      padding-top: .5rem;
+      padding-top: .15rem;
     }
 
     @include mq-small {
@@ -19,7 +23,7 @@
     }
 
     @include mq-medium {
-      & [name='SenderName'] { // 
+      & [name='SenderName'] { //
         width: 70%;
       }
 
@@ -31,7 +35,7 @@
 
   & dl {
     @include mq-small {
-      margin: 1rem auto .75rem;
+      margin: 0 auto .75rem;
     }
 
     @include mq-medium {
@@ -57,7 +61,6 @@
 
   @include mq-medium {
     margin: 2rem auto;
-    padding: 1rem 0 1.5rem;
     width: 85%;
   }
 
@@ -66,10 +69,10 @@
   }
 
   & legend {
-    @include font-size-margin-ratio($legend-font-size);
-
+    @include font-size-margin-ratio($legend-font-size, 2);
     color: $legend-colour;
     font-family: #{$legend-font-family};
+    line-height: 1.75;
   }
 
   & [type='submit'] {
