@@ -13,10 +13,10 @@ $background-header: '../../images/background-rainbow.jpg';
 
 $palette-main: alternate;
 
-$home-anchor-colour: palette-colour($palette-main, 'primary');
-$about-anchor-colour: palette-colour($palette-main, 'secondary');
-$work-anchor-colour: palette-colour($palette-main, 'background');
-$contact-anchor-colour: palette-colour($palette-main, 'foreground');
+$home-colour: palette-colour($palette-main, 'primary');
+$about-colour: palette-colour($palette-main, 'secondary');
+$work-colour: palette-colour($palette-main, 'background');
+$contact-colour: palette-colour($palette-main, 'foreground');
 
 
 ///////////////
@@ -26,6 +26,11 @@ $contact-anchor-colour: palette-colour($palette-main, 'foreground');
 $button-primary-colour: palette-colour($palette-main, 'primary');
 $button-secondary-colour: palette-colour-alpha($palette-main, 'secondary', 'dark');
 $button-accent-colour: palette-colour($palette-main, 'accent');
+
+$input-text-standard-border-colour: palette-colour($palette-main, 'secondary');
+
+$legend-colour: palette-colour($palette-main, 'secondary');
+
 
 
 

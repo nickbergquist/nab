@@ -12,7 +12,8 @@
     "gulp-clean-css": "3.0.4",
     "gulp-util": "3.0.8",
     "file-exists": "3.0.2",
-    "gulp-rename": "1.2.2"
+    "gulp-rename": "1.2.2",
+    "path-exists": "3.0.0"
   },
   "dependencies": {}
 }

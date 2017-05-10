@@ -1,6 +1,8 @@
-﻿const gulp = require('gulp');
+﻿'use strict';
+
+const gulp = require('gulp');
 const util = require('gulp-util');
-const fileExists = require('file-exists');
+const pathExists = require('path-exists');
 const rename = require('gulp-rename');
 const loadJsonFile = require('load-json-file');
 const sass = require('gulp-sass');
@@ -43,8 +45,8 @@ gulp.task('pub-css', () => {
 
 // usage: gulp theme --name name-of-theme
 gulp.task('theme', () => {
-    let themePath = scssThemes + util.env.name + '.scss';
-    let filePresent = fileExists.sync(themePath);
+	let themePath = scssThemes + util.env.name + '.scss';
+	let filePresent = pathExists.sync(themePath);
 
     if (filePresent) {
         util.log('File at ' + themePath + ' exists, starting pipe...');
