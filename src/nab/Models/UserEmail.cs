@@ -17,11 +17,11 @@ namespace nab.Models
         [Display(Name = "E-mail Address")]
         public string SenderEmailAddress { get; set; }
 
-        [Required]
+        [Required (ErrorMessage = "Please enter your message subject")]
         [Display(Name = "E-mail Subject")]
         public string EmailSubject { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter your message")]
         [MaxLength(5000)]
         [Display(Name = "E-mail Message")]
         public string EmailMessage { get; set; }

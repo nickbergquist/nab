@@ -37,8 +37,6 @@ namespace nab.Controllers
             }
 
             return View("Index");
-
-            //return RedirectToAction("Index", "Home");
         }
     }
 }

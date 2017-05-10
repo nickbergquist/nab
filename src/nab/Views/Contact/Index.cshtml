@@ -35,12 +35,14 @@
                 </dt>
                 <dd>
                     <input asp-for="EmailSubject" type="text" />
+                    <span asp-validation-for="EmailSubject"></span>
                 </dd>
                 <dt>
                     <label asp-for="EmailMessage" class="required">Message</label>
                 </dt>
                 <dd>
                     <textarea asp-for="EmailMessage" rows="6"></textarea>
+                    <span asp-validation-for="EmailMessage"></span>
                 </dd>
             </dl>
         </fieldset>
@@ -50,4 +52,8 @@
 else
 {
     <p>Thanks</p>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }
