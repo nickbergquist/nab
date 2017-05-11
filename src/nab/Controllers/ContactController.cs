@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using nab.Models;
+using nab.Models.ViewModels;
 using nab.Services;
 using System.Threading.Tasks;
 
@@ -14,29 +14,31 @@ namespace nab.Controllers
             _emailService = emailService;
         }
         
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Index(bool success)
         {
-            ViewData["success"] = false;
-
-            return View();
+            return View(new ContactForm(){ IsSent = false, IsPosted = false });
         }
 
         [HttpPost]
-        public async Task<IActionResult> Email(UserEmail model)
+        public async Task<IActionResult> Index(ContactForm model)
         {
             if (ModelState.IsValid)
             {
-                await _emailService.SendEmailAsync(model.SenderName, model.SenderEmailAddress.Trim(), model.EmailSubject, model.EmailMessage);
+                model.IsPosted = true;
 
-                // check here if success and then
-                ViewData["success"] = true;
-            }
-            else
-            {
-                ViewData["success"] = false;
+                try
+                {
+                    await _emailService.SendEmailAsync(model.UserEmail.SenderName, model.UserEmail.SenderEmailAddress.Trim(), model.UserEmail.EmailSubject, model.UserEmail.EmailMessage);
+                    model.IsSent = true;
+                }
+                catch
+                {
+                    model.IsSent = false;
+                }
             }
 
-            return View("Index");
+            return View(model);
         }
     }
 }

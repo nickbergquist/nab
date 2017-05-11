@@ -41,79 +41,15 @@ namespace nab.Services
                 {
                     //client.LocalDomain = es.LocalDomain;
 
-                    try
-                    {
-                        await client.ConnectAsync(es.MailServerAddress, Convert.ToInt32(es.MailServerPort), SecureSocketOptions.Auto).ConfigureAwait(false);
-                    }
-                    catch (SmtpCommandException ex)
-                    {
-                        Console.WriteLine("Error trying to connect: {0}", ex.Message);
-                        Console.WriteLine("\tStatusCode: {0}", ex.StatusCode);
-                        return;
-                    }
-                    catch (SmtpProtocolException ex)
-                    {
-                        Console.WriteLine("Protocol error while trying to connect: {0}", ex.Message);
-                        return;
-                    }
-
-                    if (client.Capabilities.HasFlag(SmtpCapabilities.Authentication))
-                    {
-                        try
-                        {
-                            await client.AuthenticateAsync(new NetworkCredential(es.UserId, es.UserPassword));
-                        }
-                        catch (AuthenticationException ex)
-                        {
-                            Console.WriteLine("Invalid user name or password: {0}", ex.Message);
-                            return;
-                        }
-                        catch (SmtpCommandException ex)
-                        {
-                            Console.WriteLine("Error trying to authenticate: {0}", ex.Message);
-                            Console.WriteLine("\tStatusCode: {0}", ex.StatusCode);
-                            return;
-                        }
-                        catch (SmtpProtocolException ex)
-                        {
-                            Console.WriteLine("Protocol error while trying to authenticate: {0}", ex.Message);
-                            return;
-                        }
-                    }
-
-                    try
-                    {
-                        await client.SendAsync(emailMessage).ConfigureAwait(false);
-                    }
-                    catch (SmtpCommandException ex)
-                    {
-                        Console.WriteLine("Error sending message: {0}", ex.Message);
-                        Console.WriteLine("\tStatusCode: {0}", ex.StatusCode);
-
-                        switch (ex.ErrorCode)
-                        {
-                            case SmtpErrorCode.RecipientNotAccepted:
-                                Console.WriteLine("\tRecipient not accepted: {0}", ex.Mailbox);
-                                break;
-                            case SmtpErrorCode.SenderNotAccepted:
-                                Console.WriteLine("\tSender not accepted: {0}", ex.Mailbox);
-                                break;
-                            case SmtpErrorCode.MessageNotAccepted:
-                                Console.WriteLine("\tMessage not accepted.");
-                                break;
-                        }
-                    }
-                    catch (SmtpProtocolException ex)
-                    {
-                        Console.WriteLine("Protocol error while sending message: {0}", ex.Message);
-                    }
-
+                    await client.ConnectAsync(es.MailServerAddress, Convert.ToInt32(es.MailServerPort), SecureSocketOptions.Auto).ConfigureAwait(false);
+                    await client.AuthenticateAsync(new NetworkCredential(es.UserId, es.UserPassword));
+                    await client.SendAsync(emailMessage).ConfigureAwait(false);
                     await client.DisconnectAsync(true).ConfigureAwait(false);
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                throw new Exception(ex.Message);
             }
         }
     }
