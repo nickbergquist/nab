@@ -85,7 +85,7 @@
   margin-bottom: 0;
   position: absolute;
   right: percentage(20/strip-units($max-viewport-width));
-  top: 2rem;
+  top: 1rem;
   width: auto;
 
   &::before {
@@ -100,7 +100,7 @@
   &::after {
     color: $input-text-standard-border-colour;
     content: '*';
-    left: 2px;
+    left: 5px;
     position: relative;
   }
 }
