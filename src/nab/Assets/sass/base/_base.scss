@@ -1,6 +1,4 @@
-﻿
-
-body {
+﻿body {
   background-color: palette-colour($palette-mono, 'lightest');
   min-width: $min-viewport-width;
 }
@@ -42,6 +40,24 @@ main {
 
   overflow: hidden;
   padding: 2.5rem percentage(20/strip-units($max-viewport-width)) 4rem; // 10px either side at full width
+
+  & a {
+    border-bottom: 1px solid palette-colour($palette-mono, 'mid');
+    text-decoration: none;
+    text-shadow: 2px 2px 2px palette-colour($palette-mono, 'light');
+
+    &:focus {
+      border-bottom: 2px solid palette-colour($palette-main, 'foreground');
+      text-shadow: 1px 1px 0 palette-colour($palette-mono, 'mid');
+      transition: .1s;
+    }
+
+    &:hover {
+      border-bottom: 2px solid palette-colour($palette-main, 'foreground');
+      text-shadow: 1px 1px 0 palette-colour($palette-mono, 'mid');
+      transition: .1s;
+    }
+  }
 }
 
 h1,

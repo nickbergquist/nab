@@ -56,8 +56,17 @@
     font-family: #{$alt-emphasis-font-family};
     font-variant: small-caps;
     padding: 1.25rem percentage(20/strip-units($max-viewport-width)) 1rem; // 10px either side at full width
+    text-decoration: none;
     text-shadow: 1px 1px 2px $edge-shadow-colour;
     text-transform: capitalize;
+
+    &:focus {
+      text-decoration: underline;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   & .anchor-home {

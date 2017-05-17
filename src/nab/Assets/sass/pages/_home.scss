@@ -19,6 +19,110 @@ html {
   }
 }
 
+main {
+  .page-home & {
+    padding: 2.5rem 0 4rem;
+
+    & .standard {
+      padding: 2.5rem percentage(20/strip-units($max-viewport-width)) 3.5rem; // 10px either side at full width
+    }
+
+    & .introduction {
+      padding-top: 0;
+    }
+
+    & .promotion {
+      align-items: center;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+
+      & a {
+        border-bottom: 1px solid palette-colour($palette-mono, 'lightest');
+        text-shadow: 1px 1px 2px palette-colour($palette-mono, 'darker');
+
+        &:focus {
+          border-bottom: 2px solid palette-colour($palette-main, 'lightest');
+          text-shadow: 0 0 1px palette-colour($palette-mono, 'lighter');
+        }
+
+        &:hover {
+          border-bottom: 2px solid palette-colour($palette-main, 'lightest');
+          text-shadow: 0 0 1px palette-colour($palette-mono, 'lighter');
+        }
+      }
+    }
+
+    & .promo-item {
+      background-color: palette-colour-alpha('mono', 'dark', 'medium');
+      box-shadow: 0 0 125px palette-colour-alpha('mono', 'lightest', 'light');
+      color: palette-colour('mono', 'lightest');
+      padding: 1rem percentage(40/strip-units($max-viewport-width)) 1.5rem; // 20px either side at full width
+      text-align: center;
+    }
+
+    & .portfolio {
+      background-image: url('#{$background-promo}');
+      min-height: 27rem;
+    }
+
+    & .locale {
+      background-image: url('#{$background-cats}');
+      min-height: 30rem;
+    }
+  }
+
+  @include mq-small {
+    .page-home & {
+      & .portfolio {
+        min-height: 39rem;
+      }
+    }
+
+    .page-home & {
+      & .locale {
+        min-height: 42rem;
+      }
+    }
+  }
+
+  @include mq-medium {
+    .page-home & {
+      & .promotion {
+        background-attachment: fixed;
+      }
+    }
+
+    .page-home & {
+      & .portfolio {
+        min-height: 50rem;
+      }
+    }
+
+    .page-home & {
+      & .locale {
+        min-height: 46rem;
+      }
+    }
+  }
+
+  @include mq-full {
+    .page-home & {
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+
+      & .standard {
+        margin-left: auto;
+        margin-right: auto;
+        width: $max-viewport-width;
+      }
+    }
+  }
+}
+
 nav {
   @include mq-small {
     .page-home & {
