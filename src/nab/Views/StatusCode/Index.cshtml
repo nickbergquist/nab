@@ -1,0 +1,35 @@
+﻿@model int
+
+@{
+    ViewData["Title"] = "Sorry...";
+    ViewData["Page class"] = "page-error";
+
+    var statusCode = Model;
+    var statusMessage = "";
+
+    switch (statusCode)
+    {
+        case 400:
+            statusMessage = "Bad request - the request cannot be fulfilled due to bad syntax";
+            break;
+        case 403:
+            statusMessage = "Forbidden";
+            break;
+        case 404:
+            statusMessage = "Page not found";
+            break;
+        case 408:
+            statusMessage = "The server timed-out waiting for the request";
+            break;
+        case 500:
+            statusMessage = "Internal Server Error - server was unable to finish processing the request";
+            break;
+        default:
+            statusMessage = "Something unexpected happened";
+            break;
+    }
+}
+
+<h1>@ViewData["Title"]</h1>
+<p>There's been an error. <b>@statusMessage</b></p>
+<p>The request failed with error code: <b>@Model</b>.</p>

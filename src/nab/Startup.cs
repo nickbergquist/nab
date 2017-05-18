@@ -55,6 +55,9 @@ namespace nab
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            // extension method of UseStatusCodePages() middleware returns error status code and executes handler for the redirect URL
+            app.UseStatusCodePagesWithReExecute("/StatusCode/{0}");
+
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
